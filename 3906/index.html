@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3906</title>
+    <style>
+        /* Ensure body takes up full screen */
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height */
+            width: 100vw; /* Full width */
+            background-image: url('file:///C:/Users/shaja/OneDrive/Desktop/3906/Cyberpunk_1.jpg'); /* Initial background image */
+            background-size: cover; /* Cover the entire screen */
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: 'Bangers', cursive;
+            text-align: center;
+            flex-direction: column;
+            transition: background-image 1s ease-in-out; /* Smooth transition for background */
+        }
+      
+        #greeting {
+            font-size: 40px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 1), 0 0 30px rgba(0, 255, 255, 0.7), 0 0 50px rgba(0, 255, 255, 0.5);
+            border: 2px solid rgba(0, 255, 255, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: rgb(186, 224, 135);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5), inset 0 0 10px rgba(0, 255, 255, 0.8);
+            animation: glow 2s infinite alternate;
+        }
+
+        /* Keyframes for glowing animation */
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 30px rgba(0, 255, 255, 0.5), inset 0 0 10px rgba(0, 255, 255, 0.8);
+            }
+            to {
+                box-shadow: 0 0 50px rgba(0, 255, 255, 1), inset 0 0 20px rgba(0, 255, 255, 1);
+            }
+        }
+
+        #scenario, #quote {
+            font-size: 20px;
+            margin: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+            display: none; 
+            border: 2px solid rgba(255, 255, 255, 0.8); 
+            padding: 20px; 
+            background-color: rgba(0, 0, 0, 0.5); 
+            border-radius: 15px; 
+            width: calc(100% - 60px); 
+            max-width: 800px; /* Maximum width */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
+            position: absolute; /* Allows positioning using top/right/bottom/left */
+            top: 20px; /* 20px from the bottom */
+            left: 30px; /* 20px from the right */
+        }
+
+        /* Input styling */
+        input {
+            padding: 10px;
+            font-size: 24px;
+            border: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            width: 80%; /* Make input take up more space */
+            max-width: 500px;
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 20px;
+            font-size: 24px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff7f50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <!-- Initial Welcome Section -->
+    <div id="greeting">Gateway to Future</div>
+    <div id="quote">"In the neon-lit shadows of a world drowning in technology, we are all just ghosts in the machine, searching for humanity in a digital wasteland."</div>
+    
+    <input type="text" id="userInput" placeholder="Enter your name...">
+    <button onclick="submitName()">Submit</button>
+
+    <!-- Scenario Section (Initially hidden) -->
+    <div id="scenario">
+        It is the mathematical year 3906. Humanity has expanded its reach to multiple galaxies. Technology has advanced beyond imagination, and people now communicate through telepathic links facilitated by quantum neural networks. The world has evolved into a seamless blend of virtual and physical realities, with holographic displays and augmented reality being a part of everyday life.<br>
+        Human civilization has established contact with extraterrestrial beings, forming alliances and sharing knowledge across the universe. The fabrication of space and time has become a reality, enabling time travel and instantaneous transportation between distant galaxies. This era represents a pinnacle of human achievement, where the possibilities are as vast as the cosmos itself.<br>
+        In the Andromeda galaxy, humanity has encountered the ancient and powerful Annunaki, a species believed to have influenced early human civilizations. Through a shared pursuit of knowledge and technology, humans and Annunaki work together to explore the farthest reaches of the universe, unlocking the mysteries of existence and the secrets of space and time.<br>
+    </div>
+
+    <script>
+        function submitName() {
+            const userName = document.getElementById('userInput').value;
+            const greeting = document.getElementById('greeting');
+            const scenario = document.getElementById('scenario');
+            const body = document.body;
+
+            if (userName) {
+                // Update greeting text
+                greeting.textContent = `Welcome, ${userName}!`;
+                
+                // Wait for a short delay, then switch the background and content
+                setTimeout(() => {
+                    // Hide the greeting and input elements
+                    greeting.style.display = 'none';
+                    document.getElementById('userInput').style.display = 'none';
+                    document.querySelector('button').style.display = 'none';
+
+                    // Display the scenario text
+                    scenario.style.display = 'block';
+
+                    // Change the background image to the second one (Ensure the path is correct)
+                    body.style.backgroundImage = "url('file:///C:/Users/shaja/OneDrive/Desktop/3906/desertindustry.jpg')";
+                }, 500); // Short delay before switching
+            } else {
+                greeting.textContent = "Please enter your name.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
